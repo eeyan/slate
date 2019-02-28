@@ -9,23 +9,58 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='#'>Contact Support</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://tech.cornell.edu/'>Created by Cornell Tech</a>
 
 includes:
-  - errors
+  - commonly_used_terms
 
 search: true
 ---
 
-# Introduction
+# Welcome
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the BaaS by Green Dot API! 
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+You can use our API to take advantage of all of the features enabled by Green Dot's Banking as a Service platform. The 6 core APIs are:
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+ - [Enrollments](#enrollments)
+ - [Users & Accounts](#users-and-accounts)
+ - [Payment Instruments](#payment-instruments)
+ - [Transfers](#transfers)
+ - [ATM Locator](#atm-locator)
+ - [Webhooks](#webhooks)
 
-# Authentication
+# Enrollments
+
+## Overview
+
+**Object:** /enrollments
+
+The enrollments API or endpoint allows the partner to enroll a new User into a Product, create their Account, and their Payment Instrument (virtual or physical), with one single call.
+
+This API stores encrypted user data such as name, address, social security number, date of birth, email address, and phone number, as well as account information, such as direct deposit information, account or purse information, and accountholder information.
+
+By default, every user automatically has one primary purse that is designated for primary spending balance. A purse can be thought of as a balance container.
+
+**Example:** When money is added to the customer’s account by direct deposit, the amount will automatically be credited to their primary purse.
+
+A new user has the option to request a virtual or a physical card (payment instrument), only. To create an account with a virtual payment instrument only, the requestPhysicalCardFlag must be set to false in POST Enrollments or POST PaymentInstruments. *Note:* This flag will be defaulted to true if not provided.
+
+A new user's initial status depends on the Know Your Customer (KYC) requirements and the Office of Foreign Assets Control (OFAC) requirements of the program.
+
+# Users and Accounts
+
+# Payment Instruments
+
+# Transfers
+
+# ATM Locator
+
+# Webhooks
+
+# Account API
 
 > To authorize, use this code:
 
@@ -65,7 +100,7 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Transfer API
 
 ## Get All Kittens
 
